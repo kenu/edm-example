@@ -1,0 +1,52 @@
+{
+	"info": {
+		"_postman_id": "811f4d5e-1572-4e39-a5cb-d7c870931113",
+		"name": "Xyx_others",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Post message to queue (Random student details)",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "9c9ba675-e90a-4d4b-ba09-63329fe7f3c4",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\": {{$randomInt}},\n\t\"name\": \"{{$randomFirstName}}\",\n\t\"age\": {{$randomInt}},\n\t\"dateOfBith\": \"{{$timestamp}}\",\n\t\"email\": \"{{$randomEmail}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:10091/student/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "10091",
+					"path": [
+						"student",
+						"create"
+					]
+				},
+				"description": "Posting random student details to the queue.\n\nProject name - Event-driven-microservice-Producer"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
