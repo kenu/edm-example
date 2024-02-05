@@ -8,7 +8,7 @@
 docker run -d -e TZ=Asia/Seoul --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:management
 ```
 
-## Run Spring Boot Produer
+## Run Spring Boot Producer
 ```
 cd Event-driven-microservice-Producer
 mvn spring-boot:run
